@@ -1,0 +1,40 @@
+#FROM php:7.4.3-apache
+#TO DO: check php 7.x compatibility with Yii 1.0
+RUN apt-get update \
+    && apt-get -y --no-install-recommends install \
+        apt-utils \
+        libzip-dev \
+        libxml2-dev \
+        gnupg \
+        apt-transport-https \
+        libpng-dev \
+        curl \
+        libpq-dev \
+        libmcrypt-dev \
+        libmemcached-dev \
+        wget \
+        git \
+        zlib1g-dev
+
+RUN docker-php-ext-install mysqli pdo pdo_mysql gd pgsql pdo_pgsql soap
+
+# Install mcrypt
+RUN docker-php-ext-configure mcrypt && docker-php-ext-install mcrypt
+
+RUN pecl install apcu-4.0.11 && docker-php-ext-enable apcu
+
+#Memcached Installation
+RUN apt-get update && apt-get install -y libmemcached-dev zlib1g-dev \
+    && pecl install memcached-2.2.0 \
+    && docker-php-ext-enable memcached
+
+#Test only
+#cd /usr/src/
+#wget http://pecl.php.net/get/memcache-2.2.4.tgz
+#tar -zxvf memcache-2.2.4.tgz
+#cd memcache-2.2.4
+
+
+#RUN pecl install memcache
+
+RUN service apache2 restart
