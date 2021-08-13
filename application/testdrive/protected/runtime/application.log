@@ -48,3 +48,13 @@ REQUEST_URI=/testdrive/
 in /var/www/html/testdrive/protected/views/layouts/main.php (51)
 in /var/www/html/testdrive/protected/views/layouts/column1.php (6)
 in /var/www/html/testdrive/protected/controllers/SiteController.php (32)
+2021/08/13 08:10:38 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/html/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /var/www/html/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/html/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/www/html/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /var/www/html/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/testdrive/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/index.php?r=gii
+---

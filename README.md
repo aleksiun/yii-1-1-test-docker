@@ -2,11 +2,15 @@
 
 Yii 1.1.20 Framework test app based on Docker
 
-Based on "The Definitive Guide to Yii 1.0":
+Based on:
 
 EN: https://www.yiiframework.com/doc/guide/1.1/en
 
 PL: https://www.yiiframework.com/doc/guide/1.1/pl
+
+Framework:
+
+https://github.com/yiisoft/yii/releases/tag/1.1.20
 
 Docker environment:
 
@@ -17,6 +21,14 @@ Docker environment:
 
 Locations:
 
-- "testdrive/" - Yii test application folder
+- "application/testdrive/" - Yii test application folder
+- "application/testdrive/protected/config/main.php" - Yii config file (inc. Gii config)
+- "application/testdrive/protected/config/database.php" - Yii database config file
 - "requirements/index.php" - Yii Requirement Checker - now Memcache extension = Failed
 - "configs/php5-apache-dockerfile" - PHP Dockerfile
+
+To do:
+
+- Docker network fix (static IP for containers?)
+- PHP 7, 8
+- MySQL 8

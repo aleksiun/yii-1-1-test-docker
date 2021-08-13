@@ -1,7 +1,7 @@
 <?php
 //$host = "localhost";
 //$host = "127.0.0.1";
-$host = "172.20.0.3";
+$host = "172.18.0.2";
 $user = "root";
 $pass = "secret";
 $db = "testdrive";
