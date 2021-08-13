@@ -51,7 +51,7 @@
 		Copyright &copy; by My Company.<br/>
 		All Rights Reserved.<br/>
 		<?php echo Yii::powered(); ?>
-                //Webserver IP
+                <br>
                 <?php var_dump($_SERVER['REMOTE_ADDR']); ?>
 	</div><!-- footer -->
 

@@ -30,5 +30,16 @@ Locations:
 To do:
 
 - Docker network fix (static IP for containers?)
+- chmod fix (avoid "chmod -R 777 html")
 - PHP 7, 8
 - MySQL 8
+
+Temp notes:
+
+Gii permission fix (temporary)
+
+chown -R www-data:www-data /var/www/html/testdrive
+
+or
+
+chmod -R 777 html
